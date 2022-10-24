@@ -26,14 +26,14 @@ class SaveWidget extends StatefulWidget {
 }
 
 class _SaveWidgetState extends State<SaveWidget> {
+  static const platform =
+  const MethodChannel('com.glion.namecardsaver/android');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
         body: Column(
-          children: [Container(
-            child:const Text("openCV 실행")
-          )],
+          children: [Container(child: const Text("openCV 실행"))],
         ));
   }
 }

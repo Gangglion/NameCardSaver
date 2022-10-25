@@ -27,19 +27,19 @@ class TakeSceen extends StatelessWidget {
         primarySwatch: Colors.grey,
       ),
       debugShowCheckedModeBanner: false, // 상단 우측 디버그 리본 숨기기
-      home: MyHomePage(),
+      home: const startPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class startPage extends StatefulWidget {
+  const startPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<startPage> createState() => _startPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _startPageState extends State<startPage> {
   int currentPage = 0;
   PageController _pageController = PageController(
     initialPage: 0,

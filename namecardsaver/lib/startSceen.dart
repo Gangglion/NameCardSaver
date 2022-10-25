@@ -1,11 +1,17 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:namecardsaver/saveSceen.dart';
+import 'package:namecardsaver/cameraSceen.dart';
 
-void main() {
+late final _firstCamera;
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final _cameras = await availableCameras();
+  _firstCamera = _cameras.first;
   runApp(const TakeSceen());
 }
 
@@ -13,7 +19,8 @@ class TakeSceen extends StatelessWidget {
   const TakeSceen({super.key});
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]); // 하단바만 남기고 상단 상태표시줄 안보이게함
+    SystemChrome.setEnabledSystemUIOverlays(
+        [SystemUiOverlay.bottom]); // 하단바만 남기고 상단 상태표시줄 안보이게함
     return MaterialApp(
       title: 'NameCardSaver',
       theme: ThemeData(
@@ -86,7 +93,11 @@ class _MyHomePageState extends State<MyHomePage> {
               margin: const EdgeInsets.only(left: 10, top: 50, right: 10),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder : (context) => const SaveSceen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              cameraWidget(firstCanera: _firstCamera)));
                 },
                 style:
                     ElevatedButton.styleFrom(backgroundColor: Colors.blueGrey),

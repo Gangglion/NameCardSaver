@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -27,13 +30,17 @@ class SaveWidget extends StatefulWidget {
 
 class _SaveWidgetState extends State<SaveWidget> {
   static const platform =
-  const MethodChannel('com.glion.namecardsaver/android');
+      const MethodChannel('com.glion.namecardsaver/android'); // 채널생성자로 전달될 채널
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
-        body: Column(
-          children: [Container(child: const Text("openCV 실행"))],
+        body: Center(
+          child: Column(
+            children: <Widget>[],
+          ),
         ));
   }
 }

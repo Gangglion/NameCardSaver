@@ -23,3 +23,5 @@
   - 명함 이미지 촬영
   - 명함 텍스트 인식
   - 디바이스 저장
+## 3. 흐름도
+![NamecardSaver_Flow](https://user-images.githubusercontent.com/67559542/197653378-65ba5350-c7d1-47f4-a41f-1fe0b0bbb5e7.png)

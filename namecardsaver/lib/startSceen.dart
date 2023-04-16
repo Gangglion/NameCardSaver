@@ -19,8 +19,8 @@ class TakeSceen extends StatelessWidget {
   const TakeSceen({super.key});
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays(
-        [SystemUiOverlay.bottom]); // 하단바만 남기고 상단 상태표시줄 안보이게함
+    SystemChrome.setEnabledSystemUIMode(
+        SystemUiMode.manual, overlays: [SystemUiOverlay.bottom]); // 하단바만 남기고 상단 상태표시줄 안보이게함
     return MaterialApp(
       title: 'NameCardSaver',
       theme: ThemeData(
